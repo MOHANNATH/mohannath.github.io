@@ -48,21 +48,6 @@
       from { opacity: 0; transform: scale(0.8); }
       to { opacity: 1; transform: scale(1); }
     }
-    button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      background: #ff2e63;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      transition: transform 0.2s ease;
-    }
-    button:hover {
-      transform: scale(1.05);
-    }
     .heart {
       position: absolute;
       color: #ffdde1;
@@ -83,20 +68,31 @@
     <h1>Happy Birthday Jemima! 💖</h1>
     <p>Wishing you a magical day filled with love, laughter, and sweet surprises! 🎂✨</p>
     <div class="balloons">🎈🎈🎉🎂🎉🎈🎈</div>
-    <button onclick="playMusic()">Play Music 🎶</button>
   </div>
 
   <!-- Piano version from Pixabay -->
-  <audio id="music" loop>
-    <source src="https://pixabay.com/get/audio/13976/" type="audio/mpeg">
+  <audio id="music" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6ba5c50589.mp3?filename=happy-birthday-to-you-piano-version-13976.mp3" type="audio/mpeg">
     Your browser does not support audio.
   </audio>
 
   <script>
-    function playMusic() {
-      document.getElementById("music").play();
-    }
+    // Fade-in trick for autoplay
+    const music = document.getElementById("music");
+    music.volume = 0; // start muted
+    let vol = 0;
+    music.play().then(() => {
+      const fade = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05;
+          music.volume = vol;
+        } else {
+          clearInterval(fade);
+        }
+      }, 300); // fade in smoothly
+    });
 
+    // Floating hearts
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
