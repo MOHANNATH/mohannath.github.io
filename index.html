@@ -1,86 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Jemima 🎂🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      color: #fff;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 400px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .balloons {
+      font-size: 2rem;
+      animation: float 3s infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff69b4;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="balloons">🎈🎈🎉🎂🎉🎈🎈</div>
+    <h1>Happy Birthday Jemima! 💖</h1>
+    <p>Wishing you a day filled with love, laughter, and lots of cake! 🎂✨</p>
+    <div class="balloons">🎈🎈🎉🎂🎉🎈🎈</div>
+    <button onclick="playMusic()">Play Music 🎶</button>
+  </div>
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
-      rel="stylesheet"
-    />
-    <title>Frontend Mentor | Single Price Grid Component</title>
+  <audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mp3">
+    Your browser does not support audio.
+  </audio>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-      body {
-        font-family: "Karla", sans-serif;
-        font-size: 16px;
-      }
-      p span {
-        font-size: 50px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <div class="container">
-        <div class="header">
-          <h1 style="color: var(--cyan)">Join our community</h1>
-
-          <h2 style="color: var(--yellow)">
-            30-day, hassle-free money back guarantee
-          </h2>
-          <p style="color: var(--blue)">
-            Gain access to our full library of tutorials along with expert code
-            reviews. <br />
-            Perfect for any developers who are serious about honing their
-            skills.
-          </p>
-        </div>
-        <div class="left-sec">
-          <h1>Monthly Subscription</h1>
-
-          <p>
-            <span>&dollar;29</span> per month<br />
-
-            Full access for less than &dollar;1 a day
-          </p>
-          <button>Sign Up</button>
-        </div>
-        <div class="right-sec">
-          <h1>Why Us</h1>
-
-          <p>
-            Tutorials by industry experts Peer &amp; expert code review Coding
-            exercises Access to our GitHub repos Community forum Flashcard decks
-            New videos every week
-          </p>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Mohan Nath</a>.
-      </p>
-    </footer>
-  </body>
+  <script>
+    function playMusic() {
+      document.getElementById("music").play();
+    }
+  </script>
+</body>
 </html>
