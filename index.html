@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Jemima 🎂🎉</title>
+  <title>Happy Birthday Jemima! 💖</title>
   <style>
     body {
       margin: 0;
@@ -63,8 +63,6 @@
     button:hover {
       transform: scale(1.05);
     }
-
-    /* Floating hearts animation */
     .heart {
       position: absolute;
       color: #ffdde1;
@@ -88,9 +86,9 @@
     <button onclick="playMusic()">Play Music 🎶</button>
   </div>
 
-  <!-- Happy Birthday piano tune -->
+  <!-- Piano version from Pixabay -->
   <audio id="music" loop>
-    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid" type="audio/midi">
+    <source src="https://pixabay.com/get/audio/13976/" type="audio/mpeg">
     Your browser does not support audio.
   </audio>
 
@@ -99,7 +97,6 @@
       document.getElementById("music").play();
     }
 
-    // Generate floating hearts
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
@@ -108,7 +105,6 @@
       heart.style.fontSize = (Math.random() * 1.5 + 1) + "rem";
       heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
       document.body.appendChild(heart);
-
       setTimeout(() => { heart.remove(); }, 7000);
     }
     setInterval(createHeart, 700);
